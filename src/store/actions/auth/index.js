@@ -7,7 +7,13 @@ export const setUser = (user) => {
   };
 };
 
-// GET -> /users/idsjfaasf
+export const unsetUser = () => {
+  return {
+    type: 'auth/unsetUser',
+  };
+};
+
+// GET -> /users/idsdafsafs
 export const readUser = (userId) => {
   return async () => {
     const { data } = await usersClient.get(`/users/${userId}`);
@@ -17,10 +23,9 @@ export const readUser = (userId) => {
 };
 
 // POST -> /users
-
 export const createUser = (user) => {
   return async () => {
-    const { data } = await usersClient.post(`/users`, user);
+    const { data } = await usersClient.post('/users', user);
 
     return data;
   };
